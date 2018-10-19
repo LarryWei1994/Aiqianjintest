@@ -158,7 +158,7 @@
 							span:nth-of-type(2){
 								margin-left:30px;
 								font-size:30px;
-								color:skyblue;
+								color:blue;
 							}
 							button{
 								width:130px;

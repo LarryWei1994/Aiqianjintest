@@ -2,7 +2,9 @@
 	<div class="comments">
 		<ul>
 			<li v-for="data in list">
-				<p>{{data.story}}</p>
+				<p>{{data.story}}
+					<a @click="tend()">展开&or;</a>
+				</p>
 				<span>
 					<i class="iconfont icon-yonghu"></i>
 					{{data.mobile}}
@@ -17,19 +19,16 @@
 			</li>
 		</ul>
 		<div class="page">
-			总页数：{{Math.floor($store.state.total/3)}}
-			<div class="block">
-			    <span class="demonstration">完整功能</span>
-			    <el-pagination
-			      @size-change="handleSizeChange"
-			      @current-change="handleCurrentChange"
-			      :current-page="currentPage4"
-			      :page-sizes="[100, 200, 300, 400]"
-			      :page-size="100"
-			      layout="total, sizes, prev, pager, next, jumper"
-			      :total="400">
-			    </el-pagination>
-			</div>
+			
+			 <el-pagination
+		      @size-change="handleSizeChange"
+		      @current-change="handleCurrentChange"
+		      :current-page="1"
+		      :page-sizes="[3]"
+		      :page-size="3"
+		      layout="total, sizes, prev, pager, next, jumper"
+		      :total="$store.state.total">
+		    </el-pagination>
 		</div>
 	</div>
 </template>
@@ -40,31 +39,53 @@
 	export default{
 		data(){
 			return{
-				currentPage1: 5,
-		        currentPage2: 5,
-		        currentPage3: 5,
-		        currentPage4: 4
+				currentPage:0,
+				
 			}
 		},
 		methods:{
 			handleSizeChange(val) {
-		    	console.log(`每页 ${val} 条`);
+		    	// console.log(`每页 ${val} 条`);
 		    },
 		    handleCurrentChange(val) {
-		        console.log(`当前页: ${val}`);
+		        // console.log(`当前页: ${val}`);
+		        this.currentPage = val;
+		    },
+		    tend(){
+		    	
 		    }
 		},
 		computed:{
 			...mapState(["list"]),
+			
 		},
 		mounted(){
 			/*let someapi = 'api' + '/activity/talkact/list?pageIndex=0&pageSize=3&_=1539764140453';
 			axios.get(someapi).then(res=>{
 				this.datalist = res.data.bean.list;
 			});*/
-			if(this.$store.state.list.length===0){
-				this.$store.dispatch("getList");
+			var arr = [];
+			for(var i = 0;i <= this.$store.state.total;i++){
+				arr.push(i*3);
 			}
+			
+			if(this.$store.state.list.length===0){
+				// this.currentPage -= 1;
+				// console.log(this.currentPage);
+				this.$store.dispatch("getList",arr[this.currentPage]);
+			}
+			
+		},
+		updated(){
+			var arr = [];
+			for(var i = 0;i <= this.$store.state.total;i++){
+				arr.push(i*3);
+			}
+			// 当前页1:3
+			// 当前页2->6
+			// console.log(arr[this.currentPage]-3)
+
+			this.$store.dispatch("getList",arr[this.currentPage]-3);
 		}
 	};
 </script>
@@ -98,6 +119,14 @@
 				span:last-of-type{
 					color:#ff6c00;
 					float:right;
+				}
+				p{
+					diaplay:inline;
+					height:48px;
+					line-height:24px;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space: nowrap;
 				}
 			}
 		}
