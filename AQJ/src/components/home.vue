@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="/#/pilu">信息披露</a>
+    <a href="/#/pilu/piluindex">信息披露</a>
   </div>
 </template>
 
