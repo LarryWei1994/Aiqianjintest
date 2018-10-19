@@ -22,7 +22,9 @@ export default {
 		margin:0;
 		padding:0;
 	}
-	body{
+	html,body{
+		margin:0;
+		padding:0;
 		height: 100%;
 		font-size:14px;
 	}
@@ -38,6 +40,10 @@ export default {
 	}
 	.r{
 		float:right;
+	}
+	.w{
+		width: 1180px;
+		margin:auto;
 	}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">

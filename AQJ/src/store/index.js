@@ -7,7 +7,7 @@ const store = new Vuex.Store({
 	state:{
 		// 放所有共享状态
 		list:[],
-		total:0
+		total:0,
 	},
 	mutations:{
 		getListMutation(state,payload){
@@ -15,12 +15,14 @@ const store = new Vuex.Store({
 		},
 		getPageMutation(state,payload){
 			state.total = payload;
-		}
+		},
+		
 	},
 	actions:{
 		getList(store,payload){
-			
-			let someapi = 'api' + '/activity/talkact/list?pageIndex=0&pageSize=3&_=1539764140453';
+			// 数组为0,3,6,9,12,15,18,21...
+
+			let someapi = 'api' + '/activity/talkact/list?pageIndex='+ payload +'&pageSize=3&_=1539764140453';
 			axios.get(someapi).then(res=>{
 				/*this.datalist = res.data.bean.list;*/
 				store.commit("getListMutation",res.data.bean.list);
