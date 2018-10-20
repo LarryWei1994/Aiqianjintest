@@ -15,10 +15,10 @@
 		</div>
 		<div id="top2">
 			<ul>
-						<li><img src="../assets/logo.png">  </li>
+						<li><span></span></li>
 						<li><router-link to="/home" activeClass="borderred" >首页</router-link></li>
-						<li><router-link to="/chujie" activeClass="borderred" >出借项目</router-link></li>
-						<li><router-link to="/pilu" activeClass="borderred" >信息披露</router-link></li>
+						<li><router-link to="/chujie/comments" activeClass="borderred" >出借项目</router-link></li>
+						<li><router-link to="/pilu/transparent" activeClass="borderred" >信息披露</router-link></li>
 						<li><router-link to="/ketang" activeClass="borderred" >网络课堂</router-link></li>
 						<li><router-link to="/jiekuan" activeClass="borderred" >借款项目</router-link></li>
 						<li><router-link to="/luntan" activeClass="borderred" >官方论坛</router-link></li>
@@ -33,13 +33,12 @@
 
 
 <script type="text/javascript">
-	
+	export default{
 
-
+	};
 </script>
 
 <style type="text/css" scoped lang="scss">
-
 @font-face {
   font-family: 'iconfont';
   src: url('../../static/iconfont/iconfont.eot');
@@ -60,7 +59,7 @@
 
 body,h1,h2,h3,h4,h5,h6,p,a,img,ul,li,ol,input{padding:0; margin:0;}
 ul,ol{ list-style:none}
-a{text-decoration: none}
+a{text-decoration: none; color: #363b3f;cursor: pointer;}
 a,img{display:block}
 
 
@@ -73,16 +72,16 @@ a,img{display:block}
 			li a:hover{ color: #ed6746;}
 
 		 	li:nth-of-type(1){ margin-left: 118px}
-		 	li:nth-of-type(2){ margin-left: 665px}
+		 	li:nth-of-type(2){ margin-left: 565px}
 
 		 }
 	}
 
 	#top2{
-		ul{ width: 100%; height: 70px; 
+		ul{ width: 100%; height: 70px; border-bottom: 1px solid #eee;
 			li{height: 70px; line-height: 68px;  color:yellow; margin-right: 30px; font-size: 16px; float: left; color: #aaa;}
 			li a:hover{ color: #ed6746}
-			li:nth-of-type(1) img{display: inline-block; margin-top: 15px; margin-left: 120px}
+			li:nth-of-type(1) span{display: inline-block; width:292px;height:39px;margin-top: 15px; margin-left: 50px;background: url(../assets/sp1.png) no-repeat -232px 0;}
 			li:nth-of-type(2){margin-left: 310px; }
 
 		}

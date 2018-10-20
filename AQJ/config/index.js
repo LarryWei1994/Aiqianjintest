@@ -10,7 +10,6 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-<<<<<<< HEAD
    
 
      proxyTable: {
@@ -22,19 +21,9 @@ module.exports = {
                   '/api': ''
                  }
           }
-},
-=======
-    proxyTable: {
-        '/api':{
-            target:'https://www.iqianjin.com',
-            host:'www.iqianjin.com',
-            changeOrigin:true,
-            pathRewrite:{
-                '/api':''
-            }
-        }
     },
->>>>>>> origin/wei
+
+
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

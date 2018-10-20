@@ -12,10 +12,12 @@ export default {
       
     }
   }
-}
+};
 </script>
 
 
 <style scoped>
-
+	div{
+		height: 600px;
+	}
 </style>

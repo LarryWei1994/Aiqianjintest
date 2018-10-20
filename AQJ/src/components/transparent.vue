@@ -118,7 +118,7 @@ import axios from "axios";
 	 			console.log(error)
 	 		})
 	 	}
-	}
+	};
 </script>
 
 <style type="text/css" scoped lang="scss">
