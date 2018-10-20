@@ -9,10 +9,7 @@ import pilu from "../components/pilu.vue"
 import ketang from "../components/ketang.vue"
 import jiekuan from "../components/jiekuan.vue"
 import luntan from "../components/luntan.vue"
-import comments from "../components/comments.vue"
-import problems from "../components/problems.vue"
-import register from "../components/register.vue"
-import login from "../components/login.vue"
+
 
 export default new Router({
   routes: [
@@ -22,22 +19,7 @@ export default new Router({
     },
     {
       path: '/chujie',
-      component: chujie,
-      children:[
-        {
-          path: 'comments',
-          component: comments
-        },
-        {
-          path: 'problems',
-          component: problems
-        },
-        {
-          path:'/',
-          redirect:"/chujie/comments"
-        }
-      ],
-
+      component: chujie
     },
     {
       path: '/pilu',
@@ -55,15 +37,7 @@ export default new Router({
       path: '/luntan',
       component: luntan
     },
-    {
-      path: '/register',
-      component: register
-    },
-    {
-      path: '/login',
-      component: login
-    },
- 	  {
+ 	{
         path:"*",
         redirect:"/home",
         // component:404Component
