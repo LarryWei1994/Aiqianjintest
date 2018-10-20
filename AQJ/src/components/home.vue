@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="body">
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -92,6 +93,11 @@
 
       </div>
       
+=======
+  <div>
+    <a href="/#/pilu/piluindex">信息披露</a>
+    <safe></safe>
+>>>>>>> origin/wei
   </div>
 
 </template>
@@ -155,6 +161,7 @@ import "../../swiper-4.4.1/dist/css/swiper.css";
     };
 
 
+<<<<<<< HEAD
 </script>
 
 <style type="text/css" scoped >
@@ -259,5 +266,24 @@ body{font-size:12px;font-family:"微软雅黑";  }
 #main table tr td:nth-of-type(4){width: 268+117px; height: 114px;}
 
 #main table tr td:nth-of-type(4) button{ width: 140px; height: 35px; line-height: 35px; background: #ed7c5e; color: white; text-align: center; border: 0;  cursor: pointer; border-radius: 5px; margin-left: 40%}
+=======
+<script>
+import safe from "./safe";
+export default {
+
+  	data () {
+    	return {
+      	
+    	}
+  	},
+  	components:{
+  		safe
+  	}
+}
+</script>
+
+
+<style scoped>
+>>>>>>> origin/wei
 
 </style>

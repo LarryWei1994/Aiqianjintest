@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div >
 
 
@@ -25,12 +26,42 @@ export default{
   	home,
     bottom,
     app
+=======
+  <div>
+    <!-- <safe></safe> -->
+    <router-view></router-view>
+  </div>
+</template>
+
+<script type="text/javascript">
+// import safe from "./components/safe"
+export default {
+  data(){
+    return {
+      
+    }
+  },
+  methods:{
+      
+  },
+  components:{
+    // safe
+>>>>>>> origin/wei
   },
   computed:{
 
   }
+<<<<<<< HEAD
 };
 
 </script>
 
 <style type="text/css" scoped lang="scss"></style>
+=======
+}
+</script>
+
+<style>
+
+</style>
+>>>>>>> origin/wei
