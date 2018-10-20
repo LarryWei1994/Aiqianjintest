@@ -1,6 +1,6 @@
 <template>
 	<div>
-	信息披露
+		index
 	
 	</div>
 </template>

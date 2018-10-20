@@ -46,6 +46,10 @@
 	body{ font:12px/1.5 "微软雅黑"; color:#5d5d5d;}
 	a{ text-decoration:none; color:#555; }
 	a:hover{ text-decoration:none; color:#01bbf4; cursor: pointer;}
+	h1, h2, h3, h4, h5, h6 {
+	    font-size: 100%;
+	    font-weight: 500;
+	}
 
 	.about-container{
 		padding:20px 0;

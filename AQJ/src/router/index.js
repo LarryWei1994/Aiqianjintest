@@ -18,63 +18,63 @@ import transparent from "../components/transparent.vue"
 import report from "../components/report.vue"
 
 
-
 export default new Router({
-  routes: [
-    {
-      path: '/home',
-      component: home
-    },
-    {
-      path: '/chujie',
-      component: chujie
-    },
-    {
-      path: '/ketang',
-      component: ketang
-    },
-    {
-      path: '/jiekuan',
-      component: jiekuan
-    },
-    {
-      path: '/luntan',
-      component: luntan
-    },
-    {
-      path: '/pilu',
-      component: pilu,
-      children:[
-        {
-          path: 'piluindex',
-          component: piluindex
-        },
-        {
-          path: 'about',
-          component: about
-        },
-        {
-          path: 'survey',
-          component: survey
-        },
-        {
-          path: 'team',
-          component: team
-        },
-        {
-          path: 'transparent',
-          component: transparent
-        },
-        {
-          path: 'report',
-          component: report
-        },
-        {
-          path: '/',
-          component: piluindex
-        },
-      ]
-    },
+
+    routes: [
+      {
+          path: '/home',
+          component: home
+      },
+      {
+          path: '/chujie',
+          component: chujie
+      },
+      {
+          path: '/ketang',
+          component: ketang
+      },
+      {
+          path: '/jiekuan',
+          component: jiekuan
+      },
+      {
+          path: '/luntan',
+          component: luntan
+      },
+      {
+          path: '/pilu',
+          component: pilu,
+          children:[
+              {
+                  path: 'piluindex',
+                  component: piluindex
+              },
+              {
+                  path: 'about',
+                  component: about
+              },
+              {
+                  path: 'survey',
+                  component: survey
+              },
+              {
+                  path: 'team',
+                  component: team
+              },
+              {
+                  path: 'transparent',
+                  component: transparent
+              },
+              {
+                  path: 'report',
+                  component: report
+              },
+              {
+                  path: '/',
+                  component: piluindex
+              },
+          ]
+      },
 
 
  	{
