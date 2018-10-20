@@ -19,6 +19,13 @@ module.exports = {
                 '/api' : ''
             }
         },
+        '/apii':{
+            target:'http://127.0.0.1:3000/apii',
+            changeOrigin:true,
+            pathRewrite:{
+                '^/apii' : ''
+            }
+        },
     },
 
     // Various Dev Server settings

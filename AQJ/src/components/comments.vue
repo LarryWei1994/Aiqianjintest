@@ -40,7 +40,6 @@
 		data(){
 			return{
 				currentPage:0,
-				
 			}
 		},
 		methods:{
