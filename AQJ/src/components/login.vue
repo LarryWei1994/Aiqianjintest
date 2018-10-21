@@ -1,8 +1,6 @@
 <template>
 	<div class="all">
-		<div class="topbar">
-			
-		</div>
+		
 		<div class="head">
 			<div class="w">用户登录</div>
 		</div>
@@ -15,7 +13,7 @@
 				<ul>
 					<li>
 						<span></span>
-						<input type="text" placeholder="用户名/邮箱/手机号">
+						<input type="text" placeholder="用户名/邮箱/手机号" name="username" v-model="userName">
 						<span>
 							请输入您常用的手机号码
 						</span>
@@ -26,7 +24,7 @@
 					</li>
 					<li>
 						<span></span>
-						<input type="password" placeholder="请输入密码">
+						<input type="password" placeholder="请输入密码" name="password" v-model="password">
 						<span>请输入密码</span>
 						<span class="yes">
 							<i class="iconfont icon-icon--"></i>
@@ -50,9 +48,7 @@
 			</div>
 		</div>	
 		</main>
-		<footer>
-			
-		</footer>
+		
 	</div>
 </template>
 <script>
@@ -65,12 +61,7 @@
 		background-color: #ebeef3;
 		height: 100%;
 		overflow: hidden;
-		.topbar{
-			margin:0;
-			width:100%;
-			height: 28px;
-			background-color:#5d5d5d;
-		}
+		
 		.head{
 			height:60px;
 			border-bottom: 1px solid #ccc;
@@ -224,14 +215,7 @@
 			}
 			
 		}
-		footer{
-			width: 100%;
-			height: 40px;
-			background-color:#5d5d5d;
-			margin: 0;
-			position: fixed;
-			bottom: 0;
-		}
+		
 	}
 
 </style>

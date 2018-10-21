@@ -7,11 +7,10 @@
 						<i class="iconfont">&#xe63d;</i>手机爱钱进
 					</router-link>
 				</li>
-				<li><i class="iconfont">&#xe68d;</i>400-812-8808(9:00-21:00)</li>
+				<li><a href="#/login">登录</a></li><li><a href="#/register">注册</a></li>
 				<li><a href="#"><i class="iconfont">&#xe764;</i>&nbsp;在线客服</a></li>
-				<li><a href="#">注册&nbsp;&nbsp;|&nbsp;&nbsp;登录</a></li>	
+				<li><i class="iconfont">&#xe68d;</i>400-812-8808(9:00-21:00)</li>
 			</ul>
-
 		</div>
 		<div id="top2">
 			<ul>
@@ -60,24 +59,57 @@
 body,h1,h2,h3,h4,h5,h6,p,a,img,ul,li,ol,input{padding:0; margin:0;}
 ul,ol{ list-style:none}
 a{text-decoration: none; color: #363b3f;cursor: pointer;}
-a,img{display:block}
+img{display:block}
 
 
 	#top1{
-		ul{width: 100%; height:30px; background: #363b3f;
+		 height: 30px;
+		 background: #363b3f;
 
-			li{ display: inline-block; color:#aaa; font-size: 14px; line-height:30px; margin-right: 20px;}
-			li a{ color: #aaa}
-			li:hover{ color: #ed6746;}
-			li a:hover{ color: #ed6746;}
+		 ul{
+		 	line-height: 30px;
+		 	li{
+		 		color: #74859c;
+		 		float: right;
+		 		
+		 		a{
+		 			color: #74859c;
+		 			padding:0 10px;
+		 			i{
+		 				color: #74859c;
+		 			}
+		 		}
+		 		a:hover{
+		 			color: #f60;
+		 		}
+		 	}
+		 	li:nth-of-type(1){
+		 		margin-left: 40px;
+		 		float: left;
+		 	}
+		 	li:nth-of-type(2){
+		 		margin-right: 40px;
+		 		a{
+		 			display: inline;
+		 			border-left: 1px solid #f60;
+		 			color: #f60;
+		 		}
+		 	}
+		 	li:nth-of-type(3){
+		 		a{
+		 			color: #f60;
+		 		}
+		 	}
 
-		 	li:nth-of-type(1){ margin-left: 118px}
-		 	li:nth-of-type(2){ margin-left: 565px}
-
+		 	
 		 }
 	}
 
 	#top2{
+		a{
+			display: block;
+		}
+		clear:both;
 		ul{ width: 100%; height: 70px; border-bottom: 1px solid #eee;
 			li{height: 70px; line-height: 68px;  color:yellow; margin-right: 30px; font-size: 16px; float: left; color: #aaa;}
 			li a:hover{ color: #ed6746}

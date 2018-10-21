@@ -1,51 +1,48 @@
 <template>
   <div class="body">
     <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="data in looplist"> 
-          <img :src="url+data.url" >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="data in looplist"> 
+
+            <img :src="url+data.url" >
+
+          </div>
         </div>
-      </div>
           <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
-      <!-- 如果需要导航按钮 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    <!-- 如果需要滚动条 -->
-    <!--<div class="swiper-scrollbar"></div>-->
+        <div class="swiper-pagination"></div>
     </div>
 
-      <div id="category">
-        <ul >
-          <li class="l"><span>华夏银行资金存管</span></li>
-          <li class="l"><span>AAA信用评级</span></li>
-          <li class="l"><span>等保三级备案</span></li>
-          <li class="l"><span>真实借款人</span></li>
-          <li class="l"><span>只能小额分散</span></li>
-          <li class="l">1，482万</br>
-                <span>&nbsp;&nbsp; 累计服务用户数</span>
-          </li>
-          <li class="l">48.73亿</br>
-                <span>&nbsp;&nbsp;为出借人带来回报(元)</span>
-          </li>
-          <li class="l">1,543.25亿</br>
-                <span>&nbsp;&nbsp;&nbsp;&nbsp;已完成出借金额(元)</span>
-          </li>
-        </ul>
-    
-        <div id="zhezhao">
-        
-          <p>爱钱进预期年化结算利率</p>
+    <div id="category">
+      <ul >
+        <li class="l"><span>华夏银行资金存管</span></li>
+        <li class="l"><span>AAA信用评级</span></li>
+        <li class="l"><span>等保三级备案</span></li>
+        <li class="l"><span>真实借款人</span></li>
+        <li class="l"><span>只能小额分散</span></li>
+        <li class="l">1，482万</br>
+              <span>&nbsp;&nbsp; 累计服务用户数</span>
+        </li>
+        <li class="l">48.73亿</br>
+              <span>&nbsp;&nbsp;为出借人带来回报(元)</span>
+        </li>
+        <li class="l">1,543.25亿</br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;已完成出借金额(元)</span>
+        </li>
+      </ul>
+  
+      <div id="zhezhao">
+      
+        <p>爱钱进预期年化结算利率</p>
 
-          <span>约</span>  
-          <span>9.5%</span> </br>  
-          <button>立即投资</button>    
-          
-           <router-link tag="p" to="/app"> <i class="iconfont">&#xe63d;</i> 安装手机爱钱进 随时随地看回报</router-link>
+        <span>约</span>  
+        <span>9.5%</span> </br>  
+        <button>立即投资</button>    
         
-        </div>
-
+         <router-link tag="p" to="/app"> <i class="iconfont">&#xe63d;</i> 安装手机爱钱进 随时随地看回报</router-link>
+      
       </div>
+
+    </div>
     <div id="main" >
         <table>
           <tr class="fir">
@@ -89,12 +86,10 @@
   </div>
 
 </template>
-<!-- <link rel="stylesheet" href="../swiper-4.4.1/dist/css/swiper.css">
-<script src="../swiper-4.4.1/dist/js/swiper.js"></script> -->
 <script type="text/javascript">
-import "../../swiper-4.4.1/dist/js/swiper.js";
+
 import Swiper from "swiper";
-import "../../swiper-4.4.1/dist/css/swiper.css";
+import "swiper/dist/css/swiper.css";
 import safe from "./safe"
     import axios from "axios";
     
@@ -107,44 +102,29 @@ import safe from "./safe"
       
          }
      },
-
-
-
       mounted(){
-          
-          // let someApi = 'api' + '/homeRequest/data?_=1539743073061';
-          // //反向代理
-          
-          //   axios.get(someApi).then(res=>{
-          //     console.log(res.data);
-          //     this.looplist = res.data.bean.carousel;
-          // });
-                  
-                  let someApi = 'api' + '/homeRequest/data?_=1539743073061';
-                  axios.get(someApi).then(res =>{
-                    console.log(res.data);
-                    this.looplist = res.data.bean.carousel;
-                  });                         
-
-
-            var mySwiper = new Swiper ('.swiper-container', {
-                //direction: 'vertical', // 垂直切换选项
-                loop: true, // 循环模式选项
-                autoplay:true,
-                // 如果需要分页器
-                pagination: {
-                  el: '.swiper-pagination',
-                },
-                
-                // 如果需要前进后退按钮
-                navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-                },
-                
-                // 如果需要滚动条
-               
-              })        
+        
+          var mySwiper = new Swiper ('.swiper-container', {
+              direction: 'horizontal', // 切换选项
+              loop: true, // 循环模式选项
+              loopAdditionalSlides:0,
+              autoplay:true,
+              stopOnLastSlide: false,
+              // 如果需要分页器
+              pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable:true
+              },
+            }) 
+             
+            let someApi = 'api' + '/homeRequest/data?_=1539743073061';
+            axios.get(someApi).then(res =>{
+              console.log(res.data);
+              this.looplist = res.data.bean.carousel;
+              // 当ajax请求回来后再执行swiper
+            });                         
+            
 
        },
        components:{
@@ -192,7 +172,13 @@ import safe from "./safe"
       height: 305px;
       z-index: 100;
       position: relative;
+
   } 
+  .swiper-container img{
+    width: auto;
+    height: 310px;
+    background-size: auto 310px;
+  }
 
 
   #category{ width:100%; height:130px; background: white; }

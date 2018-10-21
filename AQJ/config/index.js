@@ -13,14 +13,22 @@ module.exports = {
    
 
      proxyTable: {
-          '/api': {   
+          
+          '/ooo': {
+               target: 'http://127.0.0.1:3000/ooo/',
+               changeOrigin: true,
+               pathRewrite: {
+                   '^/ooo': ''
+               }
+           },
+           '/api': {   
               target: 'http://www.iqianjin.com',
               host: 'www.iqianjin.com',
               changeOrigin:true,
               pathRewrite: {
                   '/api': ''
                  }
-          }
+          },
     },
 
 

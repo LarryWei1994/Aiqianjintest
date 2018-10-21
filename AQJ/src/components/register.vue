@@ -1,8 +1,5 @@
 <template>
 	<div class="all">
-		<div class="topbar">
-			
-		</div>
 		<div class="head">
 			<div class="w">用户注册</div>
 		</div>
@@ -51,7 +48,7 @@
 							<a href="">《爱钱进注册协议》</a>
 							<a href="">《CFCA数字证书服务协议》</a>
 						</div>
-						<button @click="addUser">立即注册</button>
+						<button @click="addUser" href="javascript:;">立即注册</button>
 						<p><span></span>您的信息已使用SSL加密技术，数据传输安全</p>
 					</el-collapse>
 				</div>
@@ -59,13 +56,10 @@
 			</div>
 			
 		</main>
-		<footer>
-			
-		</footer>
 	</div>
 </template>
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 	export default{
 		data(){
 			return{
@@ -75,14 +69,39 @@
 		},
 		methods:{
 			addUser() {
+				var telReg = /^1[3-8]\d{9}/;
+				var pasReg = /[0-9A-Za-z]{6,20}$/;
 			    var name = this.userName;
-			    var age = this.age;
-			    this.$http.post('/apii/user/addUser', {
-			        username: name,
-			        age: age
-			    },{}).then((response) => {
-			        console.log(response);
-			    })
+			    var password = this.password;
+			    if(telReg.test(name)){
+			    	// 输入的用户名符合验证
+			    	// 检验数据库中是否存在该数据
+			    	/*axios.get('/ooo/user/selectUser',{
+			    		username: name
+			    	},function(resp){
+			    		if(resp.ret){
+			    			//注册成功，跳转到登录界面
+			    			console.log('用户名不存在，可以注册');
+			    			// 再判断密码是否符合验证*/
+			    			if(pasReg.test(password)){
+			    				axios.post('/ooo/user/addUser', {
+			    				    username: name,
+			    				    password: password
+			    				},{}).then((response) => {
+			    				    console.log(response);
+			    				    
+			    				})
+			    			}else{
+			    				console.log('密码为6-20位字母或数字');
+			    			}
+			    		/*}else{
+			    			alert("注册失败");
+			    		}
+			    	})*/
+			    	
+			    }else{
+			    	console.log('请输入正确的手机号');
+			    }
 			}
 		}
 		
