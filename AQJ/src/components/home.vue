@@ -103,27 +103,29 @@ import safe from "./safe"
          }
      },
       mounted(){
-        
-          var mySwiper = new Swiper ('.swiper-container', {
-              direction: 'horizontal', // 切换选项
-              loop: true, // 循环模式选项
-              loopAdditionalSlides:0,
-              autoplay:true,
-              stopOnLastSlide: false,
-              // 如果需要分页器
-              pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable:true
-              },
-            }) 
-             
-            let someApi = 'api' + '/homeRequest/data?_=1539743073061';
+         let someApi = 'api' + '/homeRequest/data?_=1539743073061';
             axios.get(someApi).then(res =>{
               console.log(res.data);
               this.looplist = res.data.bean.carousel;
-              // 当ajax请求回来后再执行swiper
-            });                         
+              this.$nextTick(res=>{
+              var mySwiper = new Swiper ('.swiper-container', {
+                  direction: 'horizontal', // 切换选项
+                  loop: true, // 循环模式选项
+                  loopAdditionalSlides:0,
+                  autoplay:true,
+                  stopOnLastSlide: false,
+                  // 如果需要分页器
+                  pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable:true
+                  },
+                }) 
+            })
+            });    
+          
+             
+                                
             
 
        },
